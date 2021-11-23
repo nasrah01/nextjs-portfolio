@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import hero from '../public/images/hero.jpg'
 
 const Intro = () => {
   return (
@@ -9,14 +7,12 @@ const Intro = () => {
       <title>Nasrah Abraham</title>
       <meta name='keywords' content='Nasrah Abraham developer' />
     </Head>
-    <div className='h-screen background1 flex flex-col justify-center items-center'>
-      <div className='z-10 text-center'>
-        <h1 className='text-4xl'>Nasrah Abraham</h1>
-        <h2>A Front end Developer all about developing creative, inspiring, trending user friendly UI/UX</h2>
+    <div className='h-screen background1 flex flex-row justify-center items-center'>
+      <div className='z-40 text-center'>
+        <h1></h1>
+        <h2 className='text-2xl'>A Front end Developer all about building high quality, high preformance, SEO optimized websites</h2>
+        <button className='border-solid'>Contact me</button>
       </div>
-      {/* <div className='z-10 h-4/5'>
-        <Image src={hero} alt='Woman and code' placeholder='blur' />
-      </div> */}
     </div>
     </>
   )

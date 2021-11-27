@@ -1,15 +1,16 @@
 import Image from 'next/image'
 
 const Work =({projects}) => {
-  console.log(projects)
 
   return (
-    projects.map((item, index) => {
-      console.log(item);
+    projects.map((item) => {
       return (
-        <div>
+        <div key={item.id}>
           <h2>{item.title}</h2>
           <p>{item.description}</p>
+          <Image src={item.images[0].url} width={300} height={180} />
+          <a href={item.code}>code</a>
+          <a href={item.website}>website</a>
         </div>
       )
     })

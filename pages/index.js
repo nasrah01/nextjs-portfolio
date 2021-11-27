@@ -2,30 +2,41 @@ import Intro from '../components/Hero'
 import About from '../components/About'
 import Skills from '../components/Skills'
 import Work from '../components/Work'
-import { GraphQLClient } from 'graphql-request'
-import { gql } from 'graphql-request'
+import Contact from '../components/Contact'
+import { GraphQLClient, gql } from 'graphql-request'
+
+
+const Home = ({projects}) => {
+  return (
+    <div>
+      <Intro />
+      <About />
+      <Skills />
+      <Work projects={projects}/>
+      <Contact />
+    </div>
+  )
+}
+
+export default Home
 
 export const graphcms = new GraphQLClient(
-  'https://api-eu-central-1.graphcms.com/v2/ckw7v5jzu0gr501w3hi3m7jf3/master'
+  process.env.GRAPHCMS_PROJECT_API
 );
 
 const Query = gql`
-  query {
-    projects {
-      id
-      title
-      description 
-      images {
-        url
-      }
-      website {
-        raw
-      }
-      code {
-        raw
-      }
+query {
+  projects {
+    id
+		title
+   	description 
+    images {
+      url
     }
+    website
+    code
   }
+}
 `
 
 export async function getStaticProps() {
@@ -37,17 +48,3 @@ export async function getStaticProps() {
     }
   }
 }
-
-
-const Home = ({projects}) => {
-  return (
-    <div>
-      <Intro />
-      <About />
-      <Skills />
-      <Work projects={projects}/>
-    </div>
-  )
-}
-
-export default Home

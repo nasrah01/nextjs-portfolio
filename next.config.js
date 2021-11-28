@@ -1,7 +1,7 @@
 module.exports = {
-  reactStrictMode: true,
+    reactStrictMode: true,
 
-  images: {
-    domains: ['media.graphcms.com'],
-  },
-};
+    images: {
+        domains: ['media.graphcms.com'],
+    },
+}

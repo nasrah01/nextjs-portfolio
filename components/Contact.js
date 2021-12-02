@@ -12,7 +12,7 @@ const Contact = () => {
 
     const onFormSubmit = async (data) => {
         let config = {
-            method: 'post',
+            method: 'POST',
             url: `http://localhost:3000/api/contactform`,
             headers: {
                 ContentType: 'application/json',
@@ -41,7 +41,10 @@ const Contact = () => {
                             name="name"
                             {...register('name', {
                                 required: 'please enter your name',
-                                maxLength: 20,
+                                maxLength: {
+                                    value: 20,
+                                    message: 'name is too long',
+                                },
                             })}
                         />
                         {errors.name && (
@@ -57,6 +60,10 @@ const Contact = () => {
                             name="email"
                             {...register('email', {
                                 required: 'please enter your email',
+                                pattern: {
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                    message: 'invalid email please try again',
+                                },
                             })}
                         />
                         {errors.email && <span>{errors.email.message}</span>}
@@ -67,6 +74,11 @@ const Contact = () => {
                             name="message"
                             {...register('message', {
                                 required: 'please leave me a message',
+                                maxLength: {
+                                    value: 500,
+                                    message:
+                                        'maximum of 500 characters for message',
+                                },
                             })}
                         ></textarea>
                         {errors.message && (

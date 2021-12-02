@@ -23,8 +23,8 @@ const Nav = () => {
                     } sm:flex sm:bg-transparent sm:h-auto sm:flex-row`}
                 >
                     <Item title="Home" location="/" />
-                    <Item title="Projects" location="/projects" />
-                    <Item title="Contact" location="/contact" />
+                    <Item title="Projects" location="/" />
+                    <Item title="Contact" location="/" />
                 </ul>
                 <button
                     className="absolute top-0 right-0 p-2 sm:hidden"

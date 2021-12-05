@@ -8,10 +8,25 @@ const Contact = () => {
         handleSubmit,
         reset,
         formState: { errors },
-    } = useForm()
+    } = useForm<FormValue>()
 
-    const onFormSubmit = async (data) => {
-        let config = {
+    type FormValue = {
+        name: string
+        email: string
+        message: string
+    }
+
+    type Config = {
+        method: any
+        url: any
+        headers: {
+            ContentType: string
+        }
+        data: any
+    }
+
+    const onFormSubmit = async (data: any) => {
+        let config: Config = {
             method: 'POST',
             url: `http://localhost:3000/api/contactform`,
             headers: {

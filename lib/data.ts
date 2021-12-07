@@ -4,7 +4,10 @@ import { SiNextdotjs, SiTailwindcss, SiTypescript } from 'react-icons/si'
 
 export const data = {
     bio: {
-        title: 'All about building high quality, high preformance, SEO optimized websites',
+        title: 'All about building',
+        quality: 'high quality,',
+        performance: 'high preformance,',
+        optimize: 'SEO optimized websites',
         email: 'contact@nasrah.dev',
     },
     about: {
@@ -54,6 +57,15 @@ export const data = {
         },
         {
             id: '2',
+            title: 'YouTube Clone',
+            image: 'images/youtube-1.png',
+            description:
+                ' built with React, duplicating functionalities found on youtube, making api requests to retreive data for the most popular videos to include on the recommended videos section, search for videos, and play selected videos.',
+            website: 'https://youtube-clone-bx5dkw75o-nasrah01.vercel.app/',
+            code: 'https://github.com/nasrah01',
+        },
+        {
+            id: '3',
             title: 'YouTube Clone',
             image: 'images/youtube-1.png',
             description:

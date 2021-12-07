@@ -5,6 +5,11 @@ module.exports = {
     ],
     darkMode: false, // or 'media' or 'class'
     theme: {
+        extends: {
+            fontSize: {
+                dynamic: 'clamp(2.5rem, 4vw, 4.5rem',
+            },
+        },
         fontFamily: {
             poppins: ['Poppins', 'sans-serif'],
         },

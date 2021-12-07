@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { HiMenuAlt1, HiX } from 'react-icons/hi'
 
 const Item = (props) => (
-    <li className="pb-6 text-2xl sm:text-lg sm:pr-8 sm:pb-0">
+    <li className="pb-6 text-2xl sm:text-base sm:pl-8 sm:pb-0 md:text-lg">
         <Link href={props.location}>
             <a>{props.title}</a>
         </Link>
@@ -20,11 +20,11 @@ const Nav = () => {
                         toggleViewMode
                             ? 'fixed bg-white w-full h-full flex flex-col justify-center items-center'
                             : 'hidden'
-                    } sm:flex sm:bg-transparent sm:h-auto sm:flex-row`}
+                    } sm:flex sm:bg-transparent sm:h-auto sm:flex-row sm:p-3`}
                 >
                     <Item title="Home" location="/" />
                     <Item title="Projects" location="/" />
-                    <Item title="Hire Me" location="/" />
+                    <Item title="Contact" location="/" />
                 </ul>
                 <button
                     className="absolute top-0 right-0 p-2 sm:hidden"

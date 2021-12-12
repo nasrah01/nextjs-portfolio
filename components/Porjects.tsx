@@ -4,16 +4,16 @@ import Image from 'next/image'
 
 const Work = () => {
     return (
-        <div>
-            <h2 className="text-blue-600 text-sm uppercase font-bold px-4">
+        <div className="p-cu">
+            <h2 className="text-blue-600 text-header text-center uppercase font-bold px-4">
                 Projects
             </h2>
-            <div className="md:flex flex-row justify-center">
+            <div className="flex flex-col justify-around lg:flex-row">
                 {data.projects.map((item) => {
                     return (
                         <div
                             key={item.id}
-                            className=" flex justify-center py-6"
+                            className=" flex justify-center py-6 lg:px-4 2xl:px-8"
                         >
                             <div className="max-w-sm rounded overflow-hidden shadow-lg">
                                 <Image
@@ -21,6 +21,7 @@ const Work = () => {
                                     alt={`${item.title} website`}
                                     width={700}
                                     height={450}
+                                    priority={true}
                                 />
                                 <div>
                                     <div className="px-6 py-4">

@@ -1,11 +1,23 @@
 import { GrGraphQl } from 'react-icons/gr'
-import { DiJavascript1, DiReact, DiSass } from 'react-icons/di'
-import { SiNextdotjs, SiTailwindcss, SiTypescript } from 'react-icons/si'
+import {
+    DiJavascript1,
+    DiReact,
+    DiSass,
+    DiHtml5,
+    DiMysql,
+} from 'react-icons/di'
+import {
+    SiNextdotjs,
+    SiTailwindcss,
+    SiTypescript,
+    SiPhp,
+    SiGithub,
+} from 'react-icons/si'
 
 export const data = {
     bio: {
-        title: 'All about building',
-        quality: 'high quality,',
+        title: 'Front End Developer',
+        quality: 'All about high quality,',
         performance: 'high preformance,',
         optimize: 'SEO optimized websites',
         email: 'contact@nasrah.dev',
@@ -43,6 +55,22 @@ export const data = {
         {
             icon: GrGraphQl,
             title: 'Graphql',
+        },
+        {
+            icon: DiHtml5,
+            title: 'HTML5',
+        },
+        {
+            icon: SiPhp,
+            title: 'PHP',
+        },
+        {
+            icon: DiMysql,
+            title: 'MySQL',
+        },
+        {
+            icon: SiGithub,
+            title: 'Github',
         },
     ],
     projects: [

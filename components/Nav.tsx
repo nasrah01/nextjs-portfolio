@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { HiMenuAlt1, HiX } from 'react-icons/hi'
 
 const Item = (props) => (
-    <li className="pb-6 text-2xl sm:text-base sm:pl-8 sm:pb-0 md:text-lg">
+    <li className="pb-6 text-2xl sm:text-header sm:pl-8 sm:pb-0">
         <Link href={props.location}>
             <a>{props.title}</a>
         </Link>

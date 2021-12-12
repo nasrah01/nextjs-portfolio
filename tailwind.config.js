@@ -5,9 +5,14 @@ module.exports = {
     ],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extends: {
+        extend: {
             fontSize: {
-                dynamic: 'clamp(2.5rem, 4vw, 4.5rem',
+                para: 'clamp(1rem, 1.2vw, 2rem)',
+                header: 'clamp(1.2rem, 1.5vw, 2.2rem)',
+                title: 'clamp(1.8rem, 2vw, 5rem)',
+            },
+            padding: {
+                cu: '4rem calc((100vw - 1200px) / 2)',
             },
         },
         fontFamily: {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, SubmitHandler } from 'react-hook-form'
 import axios from 'axios'
 
 const Contact = () => {
@@ -25,7 +25,7 @@ const Contact = () => {
         data: any
     }
 
-    const onFormSubmit = async (data: any) => {
+    const onFormSubmit: SubmitHandler<FormValue> = async (data) => {
         let config: Config = {
             method: 'POST',
             url: `http://localhost:3000/api/contactform`,
@@ -38,6 +38,7 @@ const Contact = () => {
         try {
             const response = await axios(config)
             if (response.status === 200) {
+                console.log(data)
                 reset()
             }
         } catch (err) {
@@ -46,16 +47,22 @@ const Contact = () => {
     }
 
     return (
-        <div className="min-h-screen flex flex-col justify-center py-6 px-4">
-            <div className='px-4'>
-                <h2 className='text-blue-600  text-sm uppercase font-bold'>Contact</h2>
-                <p className='text-base text-gray-800'>
+        <div className="flex flex-col lg:flex-row justify-center items-center p-cu">
+            <div className="px-4 sm:text-center sm:w-8/12 sm:mx-auto sm:max-w-md xl:max-w-lg 2xl:max-w-xl">
+                <h2 className="text-blue-600 text-header uppercase font-bold">
+                    Contact
+                </h2>
+                <p className="text-para text-gray-800 py-2">
                     I&apos;d love to here from you, leave me a message or shoot
                     me an email at contact@nasrah.dev
                 </p>
             </div>
-            <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-                <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
+            <div className="hidden">
+                <h2>Thank you!</h2>
+                <p>Your message has been sent</p>
+            </div>
+            <div className="mt-8 mx-auto w-full max-w-md xl:ml-0">
+                <div className="bg-white py-8 px-6 shadow-lg rounded sm:px-10">
                     <form
                         onSubmit={handleSubmit(onFormSubmit)}
                         className="mb-0 space-y-6"
